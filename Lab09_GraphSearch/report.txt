@@ -1,0 +1,34 @@
+### QUESTIONS
+
+The quality of your answers matter. Please take the time to provide thoughtful, well-written answers.
+
+1. Explain the benefits of using a Circular Array for implementation of the Queue. Why not also use this for a stack?
+    ### ANSWER
+
+    A circular array is a data structure that can be used to implement a queue efficiently. In a circular array, the last element of the array is connected to the first element, creating a circular structure. When elements are added to the array, they are added to the end of the circular array and when elements are removed from the array, they are removed from the beginning of the circular array. 
+
+    The benefits of using a circular array for implementation of a queue are:
+
+    a. Memory efficiency: Since a circular array reuses the same memory locations repeatedly, it saves memory compared to a dynamic array implementation of a queue.
+
+    b. Constant time enqueue and dequeue operations: The use of a circular array allows enqueue and dequeue operations to be performed in constant time O(1), as opposed to a dynamic array implementation where these operations could take linear time O(n) in the worst case.
+
+    c. Faster access: Elements in a circular array can be accessed quickly using their indices, making it easier to implement some algorithms that require accessing elements in the queue.
+
+    However, using a circular array for implementing a stack is not recommended, as a stack is a last-in-first-out (LIFO) data structure, while a circular array follows a first-in-first-out (FIFO) order. In a stack implementation using a circular array, the last element added to the stack will be the first one to be removed, which violates the LIFO principle of a stack. Therefore, a linked list or a dynamic array is a better choice for implementing a stack.
+
+2. Report on the number of nodes visited when solving the 3 mazes. For some of you, there will be a difference between bfs and dfs in the number of nodes pushed onto the queue (it depends on the ordering in the hash table). Why might one algorithm have to explore fewer nodes than the other to discover the exit?
+    ### ANSWER
+    54 Nodes total number of nodes visited when solving the three mazes.
+    Maze1.txt solved using dfs prodiced 14
+    Maze3.txt solved using bfs prodiced 10
+    Maze3.txt solved using dfs prodiced 30
+    Breadth-first search and depth-first search may produce different results when solving maze problems in Java (or any other programming language) because they explore the maze in different ways.
+
+    -Breadth-first search explores all nodes at the current depth before moving on to nodes at the next depth. This means that it guarantees to find the shortest path to the exit (assuming the maze has only one exit), but it may explore a large number of nodes that are not on the optimal path.
+
+    -Depth-first search, on the other hand, explores as far as possible along each branch before backtracking. This means that it may find a path to the exit more quickly if it is closer to the starting point, but it does not guarantee to find the shortest path.
+
+    -In terms of the number of nodes explored, breadth-first search may explore more nodes because it systematically explores all nodes at each depth before moving on to the next depth. Depth-first search, on the other hand, may explore fewer nodes if it finds a path to the exit early on in the search.
+
+    -The difference in the number of nodes explored by these two algorithms can also depend on the structure of the maze and the specific implementation of the algorithms. For example, the ordering of nodes in the queue or stack used by the algorithms can affect the number of nodes explored.

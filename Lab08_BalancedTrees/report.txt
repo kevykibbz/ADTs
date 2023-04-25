@@ -1,0 +1,28 @@
+1.Node.java file
+
+- Added `Node parent` to the Node class in Node.java file.
+- Added `int height` to the Node class Node.java file.
+
+
+2.List.java
+- Added `public int height()` that returns the height of the tree.
+
+- Modified `public void add(T value)` to maintain the height. 
+
+- Added `public T[] toArray(Comparator<T> comp)`.
+
+- Added `private void balance()`. 
+
+- Added `public void reorder(Comparator<T> comp)`.
+
+
+
+
+- Added/Modified `public ArrayList<T> query(Function<T,Boolean> fn)`.
+
+- Added `public T successor(T value)`. 
+
+- Added `public T predecessor(T value)`.
+  
+
+  File Main.java compiles and runs without error. with exit code=0.

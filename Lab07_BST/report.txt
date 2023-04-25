@@ -1,0 +1,34 @@
+Answer Questions
+
+1. What is the worst-case scenario of `find(T value)` and of `find(T value, Comparator<T> comp)`? Briefly describe the situations that produces these worst-case scenarios. Would you characterize each as linear, logarithmic, or constant with respect to the size of the collection? 
+
+ANSWER
+The worst-case scenario for the `find(T value)` method in a binary search tree is when the tree is unbalanced and degenerates into a linear structure (i.e., a linked list). In this case, if the target value is located at the end of the list, the method would have to traverse the entire list of n nodes, resulting in a time complexity of O(n). This is a linear worst-case scenario with respect to the size of the collection.
+
+The worst-case scenario for the `find(T value, Comparator<T> comp)` method depends on the implementation of the comparator. If the comparator always returns a constant value (e.g., always returns 0), then the method would have to traverse the entire tree to find the target value, resulting in a time complexity of O(n). This is a linear worst-case scenario with respect to the size of the collection.
+
+If the comparator is implemented efficiently and produces a balanced tree, then the worst-case scenario for `find(T value, Comparator<T> comp)` would be a logarithmic time complexity of O(log n), where n is the number of nodes in the tree. This would happen when the tree is balanced and the target value is located at the bottom level of the tree.
+
+
+2. What is the best-case and worst-case scenario for `add(T value)` for a BST? Briefly describe the situations that produces these best- and worst-case scenarios. Would you characterize each as linear, logarithmic, or constant with respect to the size of the collection? 
+
+ANSWER
+
+The best-case scenario for the add(T value) method in a binary search tree is when the tree is well-balanced and the new value is added to a leaf node with minimal tree traversal. In this case, the time complexity would be O(log n), where n is the number of nodes in the tree. This is a logarithmic best-case scenario with respect to the size of the collection.
+
+3. What are the differences in space requirements for a Binary Search Tree implementation of a List versus an array implementation?
+
+ANSWER
+In a binary search tree implementation of a List, each element is stored as a node in the tree, which requires additional memory to store the node's left and right child references. The actual space requirements depend on the shape of the tree, with a well-balanced tree requiring less memory than an unbalanced tree. In general, a binary search tree implementation would require more memory than an array implementation because of the additional overhead of the nodes and references.
+
+4. Imagine you are frequently adding new customers to your dataset. On occasion, you have to print a report of all customers in alphabetical order. What would be the best choice for implementing the List of customers? Would you use an array, alphabetically sorted array, linked list, alphabetically sorted linked list, or a binary search tree? Briefly justify by commenting on each of these implementations and why you think it would or would not be a good implementation.
+
+ANSWER
+
+Based on the given scenario, an alphabetically sorted linked list or a binary search tree would be the best choices for implementing the List of customers.
+
+An array implementation would require shifting elements and/or allocating a new array every time a new customer is added, which could be expensive. An alphabetically sorted array would require an expensive sorting operation every time a new customer is added.
+
+A standard linked list would allow for efficient insertion of new customers, but would require a linear scan of the list to retrieve the customers in alphabetical order, which could be expensive for a large dataset. A binary search tree, on the other hand, would maintain the customers in sorted order, making retrieval of the customers in alphabetical order efficient. Additionally, a binary search tree would allow for efficient insertion of new customers while maintaining the sorted order.
+
+An alphabetically sorted linked list would also maintain the customers in sorted order, but may not be as efficient for insertion of new customers compared to a binary search tree
